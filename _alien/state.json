@@ -1,0 +1,23 @@
+{
+   "args" : [
+      "root",
+      "_alien",
+      "meta_prop",
+      {}
+   ],
+   "install" : {
+      "mm" : {
+         "distname" : "Alien-Ghostscript"
+      },
+      "patch" : null,
+      "root" : "/Users/azumasatoshi/Alien-Ghostscript/_alien",
+      "stage" : "/Users/azumasatoshi/Alien-Ghostscript/blib/lib/auto/share/dist/Alien-Ghostscript"
+   },
+   "runtime" : {
+      "alien_build_version" : "1.65",
+      "install_type" : "share",
+      "legacy" : {
+         "name" : "ghostscript"
+      }
+   }
+}

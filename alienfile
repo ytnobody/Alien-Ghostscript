@@ -1,0 +1,21 @@
+use alienfile;
+
+plugin 'PkgConfig' => (
+  pkg_name => 'ghostscript',
+);
+
+share {
+    start_url 'https://github.com/ArtifexSoftware/ghostpdl-downloads/releases';
+    plugin 'Download' => (
+        filter  => qr|^ghostscript-[0-9\.]+\.tar\.gz$|,
+        version => qr|^ghostscript-([0-9\.]+)\.tar\.gz$|,
+    );
+    plugin 'Extract' => (format => 'tar.gz');
+    plugin 'Build::Autoconf';
+    build [
+        '%{configure} --disable-shared',
+        '%{make}',
+        '%{make} install',
+        'echo "FUGA"'
+    ];
+};
